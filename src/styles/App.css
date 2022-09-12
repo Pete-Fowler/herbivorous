@@ -1,0 +1,16 @@
+
+body {
+  margin: 0px;
+}
+
+#app {
+  display: grid;
+  grid: 
+    'nav nav' 10fr
+    'main main' 90fr
+    /75fr 25fr;
+    width: 100vw;
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+}

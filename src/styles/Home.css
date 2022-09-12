@@ -1,0 +1,11 @@
+#home {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#home img {
+  max-height: 200vh;
+  max-width: 95%;
+}
