@@ -8,33 +8,31 @@ import { Route, Routes } from 'react-router-dom';
 
 function App() {
   
-  const randomRecipe = useRef({}) 
-  const [ randomCard, setRandomCard ] = useState('');
+  const [ recipe, setRecipe ] = useState({id: '', title: '', image: ''});
+  const [ card, setCard ] = useState('');
   const key = '7c9862ec65e5475e978e284fa042e7df';
+ 
 
-  function getRandomRecipe() {
+
+  function fetch1() {
+    const key = '7c9862ec65e5475e978e284fa042e7df';
+
     fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=random&diet=vegan`)
     .then(res => res.json())
-    .then(data => {
-      randomRecipe.current = data.results[0].id;
-    });
+    .then(data => fetch(`https://api.spoonacular.com/recipes/${data.results[0].id}/card?apiKey=${key}`)
+      .then(res => res.json())
+      .then(data => setCard(data.url)));
   }
 
   useEffect(() => {
-    getRandomRecipe();
+    fetch1();
   }, []);
 
-  useEffect(() => {
-    fetch(`https://api.spoonacular.com/recipes/${randomRecipe.current}/card?apiKey=${key}`)
-    .then(res => res.json())
-    .then(data => setRandomCard(data.url));
-  }, [randomRecipe])
-  
   return (
     <div id='app'>
       <Nav />
       <Routes>
-        <Route exact path='/' element={<Home imageUrl={randomCard} />} />
+        <Route exact path='/' element={<Home imageUrl={card} />} />
         <Route path='/search' element={<Search />} />
         <Route path='/submit' element={<Submit />} />
       </Routes>
