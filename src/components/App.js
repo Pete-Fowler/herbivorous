@@ -52,14 +52,14 @@ function App() {
     <div id='app'>
       <Nav />
       <Routes>
-        <Route exact path='/' element={
+        <Route path='/' element={
           <Home 
           imageUrl={card} 
           anotherRandomCard={anotherRandomCard} 
         />} />
-        <Route exact path='/search' element={<Search />} />
-        <Route exact path='/saved' element={<Saved recipes={savedRecipes}/>} />
-        <Route exact path='/submit' element={<Submit saveRecipe={saveRecipe}/>} />
+        <Route path='/search' element={<Search />} />
+        <Route path='/saved' element={<Saved recipes={savedRecipes}/>} />
+        <Route path='/submit' element={<Submit saveRecipe={saveRecipe}/>} />
       </Routes>
     </div>
   );
