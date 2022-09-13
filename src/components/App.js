@@ -14,6 +14,12 @@ function App() {
   const [ card, setCard ] = useState('');
   const [ savedRecipes, setSavedRecipes ] = useState([]);
  
+  useEffect(() => {
+    fetch('http://localhost:3000/recipes')
+    .then(res => res.json())
+    .then(data => setSavedRecipes(data));
+  }, [])
+
   // useEffect(() => {
   //   fetch1();
   // }, []);
@@ -52,7 +58,7 @@ function App() {
           // anotherRandomCard={anotherRandomCard} 
         />} />
         <Route exact path='/search' element={<Search />} />
-        <Route exact path='/saved' element={<Saved />} />
+        <Route exact path='/saved' element={<Saved recipes={savedRecipes}/>} />
         <Route exact path='/submit' element={<Submit saveRecipe={saveRecipe}/>} />
       </Routes>
     </div>

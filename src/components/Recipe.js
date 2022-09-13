@@ -1,10 +1,12 @@
 import React from 'react';
 
-function Recipe({ title, image }) {
+function Recipe({ description, imageUrl, link, steps, title }) {
+  
+
 
   return <div className='recipe'>
     <h1>{title}</h1>
-    <img src={image} alt={title}></img>
+    <img src={imageUrl} alt={title}></img>
   </div>
 }
 
