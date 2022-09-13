@@ -19,7 +19,7 @@ function Home({ imageUrl, anotherRandomCard, recipe, addRecipe }) {
 
   return <div id='home'>
     <h1>Recipe of the Day</h1>
-    <button type='button' onClick={anotherRandomCard}>Show Me Another</button>
+    <button id='show-another' type='button' onClick={anotherRandomCard}>Show Me Another</button>
     <div id='image-wrapper'>
       <img src={imageUrl} alt='Recipe card'></img>
       <div id='likeBtn' onClick={like}>{liked ? '❤️' : '🤍'}</div>
