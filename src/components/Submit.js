@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Submit.css';
 
 function Submit({ saveRecipe }) {
   const [formData, setFormData ] = useState({});
+  const navigate = useNavigate();
 
   function handleChange(e) {
     setFormData({...formData, [e.target.name]: e.target.value})
@@ -18,7 +20,11 @@ function Submit({ saveRecipe }) {
       body: JSON.stringify(formData)
     })
     .then(res => res.json())
-    .then(data => saveRecipe(data));
+    .then(data => {
+      saveRecipe(data);
+      navigate('/saved');
+    });
+
   }
 
   return <div id='submit'>
