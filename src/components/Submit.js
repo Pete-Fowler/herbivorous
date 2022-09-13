@@ -1,16 +1,29 @@
 import React, { useState } from 'react';
 import '../styles/Submit.css';
 
-function Submit() {
+function Submit({ saveRecipe }) {
   const [formData, setFormData ] = useState({});
 
   function handleChange(e) {
     setFormData({...formData, [e.target.name]: e.target.value})
   }
 
+  function submitRecipe(e) {
+    e.preventDefault();
+    fetch(`http://localhost:3000/recipes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(res => res.json())
+    .then(data => saveRecipe(data));
+  }
+
   return <div id='submit'>
     <h1>Add a New Recipe</h1>
-    <form>
+    <form onSubmit={submitRecipe}>
       <input type='text' name='title' placeholder='Enter recipe title ...' 
         value={formData.title} onChange={handleChange}></input>
       <input type='url' name='imageUrl' placeholder='Enter image url' 

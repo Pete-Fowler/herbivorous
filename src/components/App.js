@@ -7,10 +7,11 @@ import Submit from './Submit';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
+  const key = '7c9862ec65e5475e978e284fa042e7df';
   const [ recipeIndex, setRecipeIndex ] = useState(0);
   const [ recipes, setRecipes ] = useState(false);
   const [ card, setCard ] = useState('');
-  const key = '7c9862ec65e5475e978e284fa042e7df';
+  const [ savedRecipes, setSavedRecipes ] = useState([]);
  
   // useEffect(() => {
   //   fetch1();
@@ -36,6 +37,10 @@ function App() {
   //   setRecipeIndex(recipeIndex => recipeIndex + 1);
   // }
 
+  function saveRecipe(recipe) {
+    setSavedRecipes([...savedRecipes, recipe]);
+  }
+
   return (
     <div id='app'>
       <Nav />
@@ -46,7 +51,7 @@ function App() {
           // anotherRandomCard={anotherRandomCard} 
         />} />
         <Route path='/search' element={<Search />} />
-        <Route path='/submit' element={<Submit />} />
+        <Route path='/submit' element={<Submit saveRecipe={saveRecipe}/>} />
       </Routes>
     </div>
   );
