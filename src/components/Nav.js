@@ -6,9 +6,10 @@ function Nav() {
 
   return <div id='nav'>
     <span>Herbivorous</span>
-    <NavLink to='/'>Home</NavLink>
-    <NavLink to='search'>Search</NavLink>
-    <NavLink to='submit'>New Recipe</NavLink>
+    <NavLink exact to='/'>Home</NavLink>
+    <NavLink to='/search'>Search</NavLink>
+    <NavLink to='/saved'>Saved Recipes</NavLink>
+    <NavLink to='/submit'>New Recipe</NavLink>
   </div>
 }
 

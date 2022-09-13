@@ -1,4 +1,5 @@
 import '../styles/Home.css';
+import React from 'react';
 
 function Home({ imageUrl, anotherRandomCard }) {
   

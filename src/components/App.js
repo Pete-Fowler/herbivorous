@@ -1,10 +1,11 @@
 import '../styles/App.css';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Nav from './Nav';
 import Home from './Home';
 import Search from './Search';
 import Submit from './Submit';
-import { Route, Routes } from 'react-router-dom';
+import Saved from './Saved';
 
 function App() {
   const key = '7c9862ec65e5475e978e284fa042e7df';
@@ -50,8 +51,9 @@ function App() {
           imageUrl={card} 
           // anotherRandomCard={anotherRandomCard} 
         />} />
-        <Route path='/search' element={<Search />} />
-        <Route path='/submit' element={<Submit saveRecipe={saveRecipe}/>} />
+        <Route exact path='/search' element={<Search />} />
+        <Route exact path='/saved' element={<Saved />} />
+        <Route exact path='/submit' element={<Submit saveRecipe={saveRecipe}/>} />
       </Routes>
     </div>
   );
