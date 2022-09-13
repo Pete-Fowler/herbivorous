@@ -12,29 +12,29 @@ function App() {
   const [ card, setCard ] = useState('');
   const key = '7c9862ec65e5475e978e284fa042e7df';
  
-  useEffect(() => {
-    fetch1();
-  }, []);
+  // useEffect(() => {
+  //   fetch1();
+  // }, []);
 
-  useEffect(() => {
-    if(recipes !== false) fetch2();
-  }, [recipes, recipeIndex])
+  // useEffect(() => {
+  //   if(recipes !== false) fetch2();
+  // }, [recipes, recipeIndex])
 
-  function fetch1() {
-    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=random&number=100&diet=vegan&type=main_course`)
-    .then(res => res.json())
-    .then(data => setRecipes(data.results));
-  }
+  // function fetch1() {
+  //   fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=random&number=100&diet=vegan&type=main_course`)
+  //   .then(res => res.json())
+  //   .then(data => setRecipes(data.results));
+  // }
 
-  function fetch2() {
-    fetch(`https://api.spoonacular.com/recipes/${recipes[recipeIndex].id}/card?apiKey=${key}`)
-      .then(res => res.json())
-      .then(data => setCard(data.url));
-  }
+  // function fetch2() {
+  //   fetch(`https://api.spoonacular.com/recipes/${recipes[recipeIndex].id}/card?apiKey=${key}`)
+  //     .then(res => res.json())
+  //     .then(data => setCard(data.url));
+  // }
 
-  function anotherRandomCard() {
-    setRecipeIndex(recipeIndex => recipeIndex + 1);
-  }
+  // function anotherRandomCard() {
+  //   setRecipeIndex(recipeIndex => recipeIndex + 1);
+  // }
 
   return (
     <div id='app'>
@@ -43,7 +43,7 @@ function App() {
         <Route exact path='/' element={
           <Home 
           imageUrl={card} 
-          anotherRandomCard={anotherRandomCard} 
+          // anotherRandomCard={anotherRandomCard} 
         />} />
         <Route path='/search' element={<Search />} />
         <Route path='/submit' element={<Submit />} />
