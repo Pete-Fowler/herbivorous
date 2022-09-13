@@ -7,7 +7,7 @@ function Nav() {
   return <div id='nav'>
     <span id='logo'>Herbivorous</span>
     <span id='links'>
-      <NavLink exact to='/'>Home</NavLink>
+      <NavLink to='/'>Home</NavLink>
       <NavLink to='/search'>Search</NavLink>
       <NavLink to='/saved'>Saved</NavLink>
       <NavLink to='/submit'>Create</NavLink>
