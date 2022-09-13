@@ -11,6 +11,7 @@ function App() {
   const key = '7c9862ec65e5475e978e284fa042e7df';
   const [ recipeIndex, setRecipeIndex ] = useState(0);
   const [ recipes, setRecipes ] = useState(false);
+  const [ recipe, setRecipe ] = useState({});
   const [ card, setCard ] = useState('');
   const [ savedRecipes, setSavedRecipes ] = useState([]);
  
@@ -31,7 +32,10 @@ function App() {
   function fetch1() {
     fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=random&number=100&diet=vegan&type=main_course`)
     .then(res => res.json())
-    .then(data => setRecipes(data.results));
+    .then(data => {
+      setRecipes(data.results);
+      setRecipe(data.results[recipeIndex]);
+    });
   }
 
   function fetch2() {
@@ -44,8 +48,8 @@ function App() {
     setRecipeIndex(recipeIndex => recipeIndex + 1);
   }
 
-  function saveRecipe(recipe) {
-    setSavedRecipes([...savedRecipes, recipe]);
+  function addRecipe(recipeToAdd) {
+    setSavedRecipes([...savedRecipes, recipeToAdd]);
   }
 
   return (
@@ -56,10 +60,12 @@ function App() {
           <Home 
           imageUrl={card} 
           anotherRandomCard={anotherRandomCard} 
+          recipe={recipe}
+          addRecipe={addRecipe}
         />} />
         <Route path='/search' element={<Search />} />
         <Route path='/saved' element={<Saved recipes={savedRecipes}/>} />
-        <Route path='/submit' element={<Submit saveRecipe={saveRecipe}/>} />
+        <Route path='/submit' element={<Submit addRecipe={addRecipe}/>} />
       </Routes>
     </div>
   );

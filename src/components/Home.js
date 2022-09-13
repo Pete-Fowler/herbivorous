@@ -1,12 +1,20 @@
 import '../styles/Home.css';
 import React, { useState } from 'react';
 
-function Home({ imageUrl, anotherRandomCard }) {
+function Home({ imageUrl, anotherRandomCard, recipe, addRecipe }) {
   const [ liked, setLiked ] = useState(false);
-  
-  function like(e) {
-    setLiked(liked => !liked);
 
+  function like() {
+    setLiked(liked => !liked);
+    fetch(`http://localhost:3000/recipes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({...recipe, imageUrl: recipe.image})
+    })
+    .then(res => res.json())
+    .then(data => addRecipe(data));
   }
 
   return <div id='home'>

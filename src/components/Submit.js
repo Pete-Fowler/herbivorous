@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Submit.css';
 
-function Submit({ saveRecipe }) {
+function Submit({ saveRecipe: addRecipe }) {
   const [formData, setFormData ] = useState({});
   const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ function Submit({ saveRecipe }) {
     })
     .then(res => res.json())
     .then(data => {
-      saveRecipe(data);
+      addRecipe(data);
       navigate('/saved');
     });
 
