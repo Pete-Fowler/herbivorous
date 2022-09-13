@@ -1,47 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/Submit.css';
 
 function Submit() {
+  const [formData, setFormData ] = useState({});
 
-  const cuisines = [
-    "African",
-    "American",
-    "British",
-    "Cajun",
-    "Caribbean",
-    "Chinese",
-    "Eastern European",
-    "European",
-    "French",
-    "German",
-    "Greek",
-    "Indian",
-    "Irish",
-    "Italian",
-    "Japanese",
-    "Jewish",
-    "Korean",
-    "Latin American",
-    "Mediterranean",
-    "Mexican",
-    "Middle Eastern",
-    "Nordic",
-    "Southern",
-    "Spanish",
-    "Thai",
-    "Vietnamese"
-];
-
-const cuisineOptions = cuisines.map(string => <option>{string}</option>);
+  function handleChange(e) {
+    setFormData({...formData, [e.target.name]: e.target.value})
+  }
 
   return <div id='submit'>
     <h1>Add a New Recipe</h1>
     <form>
-      <label for="cuisine">Cuisine: 
-        <select id='cuisine'>
-          {cuisineOptions}
-        </select>
-      </label>
+      <input type='text' name='title' placeholder='Enter recipe title ...' 
+        value={formData.title} onChange={handleChange}></input>
+      <input type='url' name='link' placeholder='Enter image url' 
+        value={formData.link} onChange={handleChange}></input>
+      <textarea name='description' placeholder='Enter description' 
+        value={formData.description} onChange={handleChange} rows='10' cols='40'></textarea>
+      <textarea name='steps' placeholder='Enter ingredients/steps' 
+        value={formData.steps} onChange={handleChange} rows='10' cols='40'></textarea>
     </form>
   </div>
 }
