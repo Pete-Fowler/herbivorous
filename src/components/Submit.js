@@ -13,12 +13,15 @@ function Submit() {
     <form>
       <input type='text' name='title' placeholder='Enter recipe title ...' 
         value={formData.title} onChange={handleChange}></input>
-      <input type='url' name='link' placeholder='Enter image url' 
+      <input type='url' name='imageUrl' placeholder='Enter image url' 
+        value={formData.link} onChange={handleChange}></input>
+        <input type='url' name='link' placeholder='Enter link to recipe (if applicable)' 
         value={formData.link} onChange={handleChange}></input>
       <textarea name='description' placeholder='Enter description' 
         value={formData.description} onChange={handleChange} rows='10' cols='40'></textarea>
       <textarea name='steps' placeholder='Enter ingredients/steps' 
         value={formData.steps} onChange={handleChange} rows='10' cols='40'></textarea>
+      <button type='submit'>Submit</button>
     </form>
   </div>
 }

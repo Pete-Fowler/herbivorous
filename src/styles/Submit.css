@@ -5,11 +5,20 @@
   align-items: center;
 }
 
+#submit h1 {
+  margin-bottom: 0px;
+}
+
 form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 25px;
+  margin: 10px 25px 25px 25px;
   width: 40%;
+  border-radius: 5px;
+  background-color: #8fc8f9;
+  box-shadow: 2px 2px 4px 2px gray;
 }
 
 input, textarea {
