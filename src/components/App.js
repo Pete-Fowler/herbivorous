@@ -12,35 +12,39 @@ function App() {
   const [ card, setCard ] = useState('');
   const key = '7c9862ec65e5475e978e284fa042e7df';
  
-
-  function fetch1() {
-    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=random&number=100&diet=vegan&type=main_course`)
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      setRecipes(data.results);
-    });
-  }
-
-  function fetch2() {
-    fetch(`https://api.spoonacular.com/recipes/${recipes[recipeIndex].id}/card?apiKey=${key}`)
-      .then(res => res.json())
-      .then(data => setCard(data.url));
-    } 
-
   useEffect(() => {
     fetch1();
   }, []);
 
   useEffect(() => {
     if(recipes !== false) fetch2();
-  }, [recipes])
+  }, [recipes, recipeIndex])
+
+  function fetch1() {
+    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=random&number=100&diet=vegan&type=main_course`)
+    .then(res => res.json())
+    .then(data => setRecipes(data.results));
+  }
+
+  function fetch2() {
+    fetch(`https://api.spoonacular.com/recipes/${recipes[recipeIndex].id}/card?apiKey=${key}`)
+      .then(res => res.json())
+      .then(data => setCard(data.url));
+  }
+
+  function anotherRandomCard() {
+    setRecipeIndex(recipeIndex => recipeIndex + 1);
+  }
 
   return (
     <div id='app'>
       <Nav />
       <Routes>
-        <Route exact path='/' element={<Home imageUrl={card} />} />
+        <Route exact path='/' element={
+          <Home 
+          imageUrl={card} 
+          anotherRandomCard={anotherRandomCard} 
+        />} />
         <Route path='/search' element={<Search />} />
         <Route path='/submit' element={<Submit />} />
       </Routes>
