@@ -6,6 +6,7 @@ function Saved({ recipes }) {
 
   const cards = recipes.map(item => 
     <Recipe 
+      key={item.id}
       description={item.description}
       imageUrl={item.imageUrl} 
       link={item.link}
