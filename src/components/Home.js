@@ -13,8 +13,8 @@ function Home({ imageUrl, anotherRandomCard }) {
     <h1>Recipe of the Day</h1>
     <button type='button' onClick={anotherRandomCard}>Show Me Another</button>
     <div id='image-wrapper'>
-      <div id='likeBtn' onClick={like}>{liked ? '❤️' : '🤍'}</div>
       <img src={imageUrl} alt='Recipe card'></img>
+      <div id='likeBtn' onClick={like}>{liked ? '❤️' : '🤍'}</div>
     </div>
   </div>
 }

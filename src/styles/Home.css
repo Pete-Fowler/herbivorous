@@ -7,18 +7,20 @@
 
 #image-wrapper {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #likeBtn {
   position: absolute;
   font-size: 1.5rem;
-  right: 40px;
+  right: 25px;
   top: 5px;
   margin: 0px;
 }
 
 #home img {
-  margin: 0px;
   max-height: 200vh;
   max-width: 95%;
 }
