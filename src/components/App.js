@@ -7,26 +7,34 @@ import Submit from './Submit';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
-  
-  const [ recipe, setRecipe ] = useState({id: '', title: '', image: ''});
+  const [ recipeIndex, setRecipeIndex ] = useState(0);
+  const [ recipes, setRecipes ] = useState(false);
   const [ card, setCard ] = useState('');
   const key = '7c9862ec65e5475e978e284fa042e7df';
  
 
-
   function fetch1() {
-    const key = '7c9862ec65e5475e978e284fa042e7df';
-
-    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=random&diet=vegan`)
+    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=random&number=100&diet=vegan&type=main_course`)
     .then(res => res.json())
-    .then(data => fetch(`https://api.spoonacular.com/recipes/${data.results[0].id}/card?apiKey=${key}`)
-      .then(res => res.json())
-      .then(data => setCard(data.url)));
+    .then(data => {
+      console.log(data);
+      setRecipes(data.results);
+    });
   }
+
+  function fetch2() {
+    fetch(`https://api.spoonacular.com/recipes/${recipes[recipeIndex].id}/card?apiKey=${key}`)
+      .then(res => res.json())
+      .then(data => setCard(data.url));
+    } 
 
   useEffect(() => {
     fetch1();
   }, []);
+
+  useEffect(() => {
+    if(recipes !== false) fetch2();
+  }, [recipes])
 
   return (
     <div id='app'>
