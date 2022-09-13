@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 function Nav() {
 
   return <div id='nav'>
-    <span>Herbivorous</span>
+    <span id='logo'>Herbivorous</span>
     <span id='links'>
       <NavLink exact to='/'>Home</NavLink>
       <NavLink to='/search'>Search</NavLink>
