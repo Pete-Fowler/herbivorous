@@ -32,7 +32,7 @@ function Recipe({ id, imageUrl, isLiked = false, title, addRecipe, removeRecipe,
 
   function toShowDetails() {
     showDetails(id);
-    navigate('/details');
+    navigate(`/details/${id}`);
   }
 
   return <div className='recipe' onClick={toShowDetails}> 
