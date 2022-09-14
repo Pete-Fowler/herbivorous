@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 
 function Recipe({ description, id, imageUrl, isLiked = false, link, steps, title, addRecipe, removeRecipe }) {
   const [ liked, setLiked ] = useState(isLiked);
-console.log(isLiked);
 
   function like() {
     if(liked === false) {
