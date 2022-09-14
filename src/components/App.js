@@ -67,7 +67,7 @@ function App() {
           addRecipe={addRecipe}
         />} />
         <Route path='/search' element={<Search addRecipe={addRecipe} />} />
-        {/* <Route path='/saved' element={<Saved recipes={savedRecipes}/>} /> */}
+        <Route path='/saved' element={<Saved recipes={savedRecipes}/>} />
         {/* <Route path='/submit' element={<Submit addRecipe={addRecipe}/>} /> */}
       </Routes>
     </div>

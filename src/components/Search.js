@@ -14,10 +14,7 @@ function Search({ addRecipe }) {
   function handleClick(e) {
     fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=random&number=10&diet=vegan&query=${string}`)
     .then(res => res.json())
-    .then(data => {
-      setResults(data);
-      console.log(data);
-    });
+    .then(data => setResults(data));
   }
 
   function resultsList() {

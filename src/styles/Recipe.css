@@ -1,7 +1,11 @@
-.recipe img {
-  min-width: 100px;
-  max-width: 40vw;
-  max-height: 40vh;
+.recipe {
+  position: relative;
+  background-color: #50C75D;
+  border: 1px solid white;
+  padding: 0px;
+  width: 300px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px #3B9446;
 }
 
 #image-box {
@@ -10,14 +14,6 @@
   min-height: 200px;
   background-size: cover;
   background-position: center;
-}
-.recipe {
-  background-color: #50C75D;
-  border: 1px solid white;
-  padding: 0px;
-  width: 300px;
-  border-radius: 5px;
-  box-shadow: 2px 2px 4px #3B9446;
 }
 
 .recipe:hover {
@@ -28,4 +24,12 @@
 .recipe h2 {
   font-size: 1.2rem;
   padding: 0px 10px;
+}
+
+#likeBtn {
+  position: absolute;
+  font-size: 1.3rem;
+  right: 3px;
+  top: 3px;
+  margin: 0px;
 }
