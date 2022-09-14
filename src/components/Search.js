@@ -12,6 +12,7 @@ function Search({ addRecipe, removeRecipe }) {
   }
 
   function handleClick(e) {
+    e.preventDefault();
     fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=random&number=10&diet=vegan&query=${string}`)
     .then(res => res.json())
     .then(data => setResults(data));
@@ -28,8 +29,10 @@ function Search({ addRecipe, removeRecipe }) {
   return (
         <div id='search'>
           <div id='search-box'>
-            <input type='text' value={string} onChange={handleChange}></input>
-            <span id='search-btn' onClick={handleClick}>🔍</span>
+            <form onSubmit={handleClick}>
+              <input type='text' value={string} onChange={handleChange}></input>
+              <button type='submit' id='search-btn'>🔍</button>
+            </form>
           </div>
           {resultsList()}
         </div>
