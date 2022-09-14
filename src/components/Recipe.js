@@ -12,7 +12,7 @@ console.log(isLiked);
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({title: title, isLiked: true, imageUrl: imageUrl})
+        body: JSON.stringify({id: id, title: title, isLiked: true, imageUrl: imageUrl})
       })
       .then(res => res.json())
       .then(data => addRecipe(data));
