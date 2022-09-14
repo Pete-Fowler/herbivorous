@@ -9,9 +9,10 @@
   margin-bottom: 0px;
 }
 
-form {
+#submit form {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
   padding: 25px;
   margin: 10px 25px 25px 25px;
@@ -21,12 +22,35 @@ form {
   box-shadow: 2px 2px 4px 2px gray;
 }
 
-input, textarea {
+#submit input, #submit textarea {
+  appearance: none;
   display: block;
+  width: 90%;
   border-radius: 5px;
   box-shadow: 2px 2px 4px lightgray;
 }
 
-textarea {
+#submit textarea {
   resize: none;
+}
+
+#submit button {
+  width: 50%;
+  font-size: 1.5rem;
+  color: white;
+  appearance: none;
+  background-color: #327f3b;
+  border: none;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #50C75D;
+}
+
+#submit button:hover {
+  transition: .6sec;
+  opacity: .8;
+}
+
+#submit button:active {
+  box-shadow: none;
 }
