@@ -20,7 +20,8 @@ function Search({ addRecipe, removeRecipe }) {
   function resultsList() {
     if(results === false) return null;
     return (
-      <RecipeList list={results} addRecipe={addRecipe} removeRecipe={removeRecipe}/>
+      <RecipeList list={results} addRecipe={addRecipe} 
+        removeRecipe={removeRecipe}/>
     )
   }
 
