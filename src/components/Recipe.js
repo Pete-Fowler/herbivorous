@@ -2,7 +2,7 @@ import '../styles/Recipe.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Recipe({ id, imageUrl, isLiked = false, title, addRecipe, removeRecipe, showDetails }) {
+function Recipe({ id, imageUrl, isLiked = false, title, addRecipe, removeRecipe }) {
   const [ liked, setLiked ] = useState(isLiked);
   const navigate = useNavigate();
 
@@ -31,7 +31,6 @@ function Recipe({ id, imageUrl, isLiked = false, title, addRecipe, removeRecipe,
   }
 
   function toShowDetails() {
-    showDetails(id);
     navigate(`/details/${id}`);
   }
 
