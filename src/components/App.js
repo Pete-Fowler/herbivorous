@@ -6,6 +6,7 @@ import Home from './Home';
 import Search from './Search';
 import Submit from './Submit';
 import Saved from './Saved';
+import Details from './Details';
 
 function App() {
   const key = '7c9862ec65e5475e978e284fa042e7df';
@@ -14,6 +15,7 @@ function App() {
   const [ recipe, setRecipe ] = useState({}); // Currently shown recipe of day
   const [ card, setCard ] = useState(''); // Card for current recipe of day
   const [ savedRecipes, setSavedRecipes ] = useState([]);
+  const [ idForDetails, setIdForDetails ] = useState(false);
  
   // Gets saved recipes from JSON-server
   useEffect(() => {
@@ -62,6 +64,10 @@ function App() {
     }))
   }
 
+  function showDetails(id) {
+    setIdForDetails(id);
+  }
+
   return (
     <div id='app'>
       <Nav />
@@ -74,10 +80,11 @@ function App() {
           addRecipe={addRecipe}
         />} />
         <Route path='/search' element={<Search addRecipe={addRecipe} 
-          removeRecipe={removeRecipe} />} />
+          removeRecipe={removeRecipe} showDetails={showDetails}/>} />
         <Route path='/saved' element={<Saved recipes={savedRecipes} 
-          removeRecipe={removeRecipe}/>} />
+          removeRecipe={removeRecipe} showDetails={showDetails}/>} />
         <Route path='/submit' element={<Submit addRecipe={addRecipe}/>} />
+        <Route path='/details' element={<Details id={idForDetails}/>} />
       </Routes>
     </div>
   );

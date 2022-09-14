@@ -2,7 +2,7 @@ import React, { useState }from 'react';
 import '../styles/Search.css';
 import RecipeList from './RecipeList';
 
-function Search({ addRecipe, removeRecipe }) {
+function Search({ addRecipe, removeRecipe, showDetails }) {
   const key = '7c9862ec65e5475e978e284fa042e7df';
   const [ string, setString ] = useState('');
   const [ results, setResults ] = useState(false);
@@ -31,6 +31,7 @@ function Search({ addRecipe, removeRecipe }) {
               list={results} 
               addRecipe={addRecipe} 
               removeRecipe={removeRecipe} 
+              showDetails={showDetails}
             />}
         </div>
    )

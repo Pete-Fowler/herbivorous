@@ -1,8 +1,10 @@
 import '../styles/Recipe.css';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Recipe({ description, id, imageUrl, isLiked = false, link, steps, title, addRecipe, removeRecipe }) {
+function Recipe({ id, imageUrl, isLiked = false, title, addRecipe, removeRecipe, showDetails }) {
   const [ liked, setLiked ] = useState(isLiked);
+  const navigate = useNavigate();
 
   function like() {
     if(liked === false) {
@@ -28,7 +30,12 @@ function Recipe({ description, id, imageUrl, isLiked = false, link, steps, title
     setLiked(liked => !liked);
   }
 
-  return <div className='recipe'> 
+  function toShowDetails() {
+    showDetails(id);
+    navigate('/details');
+  }
+
+  return <div className='recipe' onClick={toShowDetails}> 
     <div id='image-box' style={{backgroundImage: `url(${imageUrl})`}} /> 
     <h2>{title}</h2>
     <div id='likeBtn' onClick={like}>{liked ? '❤️' : '🤍'}</div>
