@@ -23,7 +23,7 @@
   height: 100%;
 }
 
-a {
+#nav a {
   box-sizing: border-box;
   font-size: 1.75rem;
   color: white;
