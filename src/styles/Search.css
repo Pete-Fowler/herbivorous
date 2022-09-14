@@ -17,5 +17,9 @@
 }
 
 #search-btn {
+  font-size: 1.3rem;
+  appearance: none;
+  border: none; 
+  background-color: #92D099;
   padding: 0px 5px;
 }
