@@ -9,10 +9,10 @@ import Saved from './Saved';
 
 function App() {
   const key = '7c9862ec65e5475e978e284fa042e7df';
-  const [ recipeIndex, setRecipeIndex ] = useState(0);
-  const [ recipes, setRecipes ] = useState(false);
-  const [ recipe, setRecipe ] = useState({});
-  const [ card, setCard ] = useState('');
+  const [ recipeIndex, setRecipeIndex ] = useState(0);  // Used to iterate another recipe of day
+  const [ recipes, setRecipes ] = useState(false); // List for recipe of day
+  const [ recipe, setRecipe ] = useState({}); // Currently shown recipe of day
+  const [ card, setCard ] = useState(''); // Card for current recipe of day
   const [ savedRecipes, setSavedRecipes ] = useState([]);
  
   // Gets saved recipes from JSON-server
@@ -66,7 +66,7 @@ function App() {
           recipe={recipe}
           addRecipe={addRecipe}
         />} />
-        <Route path='/search' element={<Search />} />
+        <Route path='/search' element={<Search addRecipe={addRecipe} />} />
         {/* <Route path='/saved' element={<Saved recipes={savedRecipes}/>} /> */}
         {/* <Route path='/submit' element={<Submit addRecipe={addRecipe}/>} /> */}
       </Routes>

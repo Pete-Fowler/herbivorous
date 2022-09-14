@@ -1,14 +1,41 @@
-import React from 'react';
+import React, { useState }from 'react';
 import '../styles/Search.css';
+import RecipeList from './RecipeList';
 
-function Search() {
+function Search({ addRecipe }) {
+  const key = '7c9862ec65e5475e978e284fa042e7df';
+  const [ string, setString ] = useState('');
+  const [ results, setResults ] = useState(false);
+  
+  function handleChange(e) {
+    setString(e.target.value);
+  }
 
-  return <div id='search'>
-    <div id='search-box'>
-      <input type='text' ></input>
-      <span id='search-btn'>🔍</span>
-    </div>
-  </div>
+  function handleClick(e) {
+    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=random&number=10&diet=vegan&query=${string}`)
+    .then(res => res.json())
+    .then(data => {
+      setResults(data);
+      console.log(data);
+    });
+  }
+
+  function resultsList() {
+    if(results === false) return null;
+    return (
+      <RecipeList list={results} addRecipe={addRecipe}/>
+    )
+  }
+
+  return (
+        <div id='search'>
+          <div id='search-box'>
+            <input type='text' value={string} onChange={handleChange}></input>
+            <span id='search-btn' onClick={handleClick}>🔍</span>
+          </div>
+          {resultsList()}
+        </div>
+   )
 }
 
 export default Search;
