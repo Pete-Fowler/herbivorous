@@ -11,30 +11,27 @@ function Search({ addRecipe, removeRecipe }) {
     setString(e.target.value);
   }
 
-  function handleClick(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=random&number=10&diet=vegan&query=${string}`)
     .then(res => res.json())
     .then(data => setResults(data));
   }
 
-  function resultsList() {
-    if(results === false) return null;
-    return (
-      <RecipeList list={results} addRecipe={addRecipe} 
-        removeRecipe={removeRecipe}/>
-    )
-  }
-
   return (
         <div id='search'>
           <div id='search-box'>
-            <form onSubmit={handleClick}>
+            <form onSubmit={handleSubmit}>
               <input type='text' value={string} onChange={handleChange}></input>
               <button type='submit' id='search-btn'>🔍</button>
             </form>
           </div>
-          {resultsList()}
+          {results === false ? null 
+            : <RecipeList 
+              list={results} 
+              addRecipe={addRecipe} 
+              removeRecipe={removeRecipe} 
+            />}
         </div>
    )
 }
