@@ -16,12 +16,16 @@
   border: 1px solid white;
   padding: 0px;
   width: 300px;
-  /* height: 400px; */
   border-radius: 5px;
-  box-shadow: 2px 2px 4px lightgray;
+  box-shadow: 2px 2px 4px #3B9446;
+}
+
+.recipe:hover {
+  transition: .6s;
+  transform: scale(1.1);
 }
 
 .recipe h2 {
   font-size: 1.2rem;
-  padding: 0px 5px;
+  padding: 0px 10px;
 }
