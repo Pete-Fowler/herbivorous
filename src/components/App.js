@@ -15,6 +15,7 @@ function App() {
   const [ recipe, setRecipe ] = useState({}); // Currently shown recipe of day
   const [ card, setCard ] = useState(''); // Card for current recipe of day
   const [ savedRecipes, setSavedRecipes ] = useState([]);
+  const [ idForDetails, setIdForDetails ] = useState(false);
  
   // Gets saved recipes from JSON-server
   useEffect(() => {
