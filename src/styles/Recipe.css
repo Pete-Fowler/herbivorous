@@ -18,7 +18,7 @@
 
 .recipe:hover {
   transition: .6s;
-  transform: scale(1.1);
+  transform: scale(1.03) rotate(1.2deg);
 }
 
 .recipe h2 {
