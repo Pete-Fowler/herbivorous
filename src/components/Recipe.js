@@ -1,20 +1,31 @@
 import '../styles/Recipe.css';
 import React, { useState } from 'react';
 
-function Recipe({ description, imageUrl, isLiked, link, steps, title, addRecipe }) {
+function Recipe({ description, id, imageUrl, isLiked, link, steps, title, addRecipe, removeRecipe }) {
   const [ liked, setLiked ] = useState(isLiked);
 
   function like() {
+    if(liked === false) {
+      fetch(`http://localhost:3000/recipes`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({title: title, isLiked: true, imageUrl: imageUrl})
+      })
+      .then(res => res.json())
+      .then(data => addRecipe(data));
+    } else {
+      fetch(`http://localhost:3000/recipes/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(res => res.json())
+      .then(removeRecipe(id));  
+    }
     setLiked(liked => !liked);
-    fetch(`http://localhost:3000/recipes`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({title: title, isLiked: true, imageUrl: imageUrl})
-    })
-    .then(res => res.json())
-    .then(data => addRecipe(data));
   }
 
   return <div className='recipe'> 

@@ -55,6 +55,13 @@ function App() {
     setSavedRecipes([...savedRecipes, recipeToAdd]);
   }
 
+  function removeRecipe(id) {
+    setSavedRecipes(savedRecipes => savedRecipes.filter(item => {
+      if(item.id !== id) return true;
+      return false;
+    }))
+  }
+
   return (
     <div id='app'>
       <Nav />
@@ -66,9 +73,11 @@ function App() {
           recipe={recipe}
           addRecipe={addRecipe}
         />} />
-        <Route path='/search' element={<Search addRecipe={addRecipe} />} />
-        <Route path='/saved' element={<Saved recipes={savedRecipes}/>} />
-        {/* <Route path='/submit' element={<Submit addRecipe={addRecipe}/>} /> */}
+        <Route path='/search' element={<Search addRecipe={addRecipe} 
+          removeRecipe={removeRecipe} />} />
+        <Route path='/saved' element={<Saved recipes={savedRecipes} 
+          removeRecipe={removeRecipe}/>} />
+        <Route path='/submit' element={<Submit addRecipe={addRecipe}/>} />
       </Routes>
     </div>
   );
