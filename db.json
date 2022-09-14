@@ -23,6 +23,18 @@
       "isLiked": true,
       "imageUrl": "https://spoonacular.com/recipeImages/652078-312x231.jpg",
       "id": 4
+    },
+    {
+      "title": "Quinoa and Kidney Bean Burgers",
+      "isLiked": true,
+      "imageUrl": "https://spoonacular.com/recipeImages/1095755-312x231.jpg",
+      "id": 5
+    },
+    {
+      "title": "Red quinoa cranberry arugula soup",
+      "isLiked": true,
+      "imageUrl": "https://spoonacular.com/recipeImages/658089-312x231.jpg",
+      "id": 6
     }
   ]
 }
