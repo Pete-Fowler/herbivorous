@@ -5,7 +5,8 @@ import { useParams } from 'react-router-dom';
 
 function Details() {
   const { id } = useParams();
-  const [ details, setDetails ] = useState(null);
+  const [ details, setDetails ] = useState({});
+  const [ loaded, setLoaded ] = useState(false);
   const key = '7c9862ec65e5475e978e284fa042e7df';
 
   useEffect(() => {
@@ -13,18 +14,16 @@ function Details() {
     .then(res => res.json())
     .then(data => {
       setDetails(data);
+      setLoaded(loaded => true);
       console.log(data);
     })
     .catch(err => console.log(err.message));
   }, [])
 
-  const ingredients = details.extendedIngredients.map(obj => 
-    <li key={obj.name}>{obj.original}</li>);
-
   return (
-    details !== null ? (<div id='details'>
-      <img src={details.image} alt={details.title}/>
+    loaded !== false ? (<div id='details'>
         <div id='text'>
+          <img src={details.image} alt={details.title}/>
           <h1>{details.title}</h1>
           <h3 id='meta-data'>
             <span id='servings'>Serves: {details.servings}  |  </span>
@@ -32,7 +31,9 @@ function Details() {
           </h3>
           <p id='summary'>{parse(details.summary)}</p>
           <h3>Ingredients</h3>
-          <ul id='ingredients'>{ingredients}</ul>
+          <ul id='ingredients'>{details.extendedIngredients.map(obj => 
+            <li key={obj.name}>{obj.original}</li>)}
+          </ul>
           <h3>Instructions</h3>
           <div id='instructions'>{parse(details.instructions)}</div>
         </div>
