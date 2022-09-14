@@ -1,3 +1,21 @@
 #search {
   grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#search input {
+  font-size: 1.3rem;
+  margin-top: 40px;
+  width: 85%;
+}
+
+#search-box {
+  font-size: 1.3rem;
+  width: 40%;
+}
+
+#search-btn {
+  padding: 0px 5px;
 }

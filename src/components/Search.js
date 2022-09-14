@@ -4,7 +4,10 @@ import '../styles/Search.css';
 function Search() {
 
   return <div id='search'>
-    Search
+    <div id='search-box'>
+      <input type='text' ></input>
+      <span id='search-btn'>🔍</span>
+    </div>
   </div>
 }
 

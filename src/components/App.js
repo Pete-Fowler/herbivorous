@@ -15,19 +15,22 @@ function App() {
   const [ card, setCard ] = useState('');
   const [ savedRecipes, setSavedRecipes ] = useState([]);
  
+  // Gets saved recipes from JSON-server
   useEffect(() => {
     fetch('http://localhost:3000/recipes')
     .then(res => res.json())
     .then(data => setSavedRecipes(data));
   }, [])
 
-  useEffect(() => {
-    fetch1();
-  }, []);
+  // Gets list of recipes, sets recipes and recipe state - fetch1
+  // useEffect(() => {
+  //   fetch1();
+  // }, []);
 
-  useEffect(() => {
-    if(recipes !== false) fetch2();
-  }, [recipes, recipeIndex])
+  // Gets recipe card image url - fetch2, which is dependent on first fetch results
+  // useEffect(() => {
+  //   if(recipes !== false) fetch2();
+  // }, [recipes, recipeIndex])
 
   function fetch1() {
     fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=random&number=100&diet=vegan&type=main_course`)
@@ -64,8 +67,8 @@ function App() {
           addRecipe={addRecipe}
         />} />
         <Route path='/search' element={<Search />} />
-        <Route path='/saved' element={<Saved recipes={savedRecipes}/>} />
-        <Route path='/submit' element={<Submit addRecipe={addRecipe}/>} />
+        {/* <Route path='/saved' element={<Saved recipes={savedRecipes}/>} /> */}
+        {/* <Route path='/submit' element={<Submit addRecipe={addRecipe}/>} /> */}
       </Routes>
     </div>
   );
