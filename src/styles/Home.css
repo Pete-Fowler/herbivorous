@@ -8,12 +8,6 @@
 #home h1 {
   margin-bottom: 10px;
 }
-#image-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 #show-another {
   font-size: 1.5rem;
@@ -35,7 +29,7 @@
   box-shadow: none;
 }
 
-#likeBtn {
+#home #likeBtn {
   position: absolute;
   font-size: 1.8rem;
   right: 40px;
@@ -48,4 +42,11 @@
   max-width: 95%;
   border-radius: 5px;
   box-shadow: 0px 0px 4px #327f3b;
+}
+
+#image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -11,7 +11,7 @@ function Home({ imageUrl, anotherRandomCard, recipe, addRecipe }) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({...recipe, imageUrl: recipe.image})
+      body: JSON.stringify({...recipe, isLiked: true, imageUrl: recipe.image})
     })
     .then(res => res.json())
     .then(data => addRecipe(data));

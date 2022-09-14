@@ -23,14 +23,14 @@ function App() {
   }, [])
 
   // Gets list of recipes, sets recipes and recipe state - fetch1
-  // useEffect(() => {
-  //   fetch1();
-  // }, []);
+  useEffect(() => {
+    fetch1();
+  }, []);
 
   // Gets recipe card image url - fetch2, which is dependent on first fetch results
-  // useEffect(() => {
-  //   if(recipes !== false) fetch2();
-  // }, [recipes, recipeIndex])
+  useEffect(() => {
+    if(recipes !== false) fetch2();
+  }, [recipes, recipeIndex])
 
   function fetch1() {
     fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=random&number=100&diet=vegan&type=main_course`)
