@@ -1,8 +1,8 @@
 import '../styles/Recipe.css';
 import React, { useState } from 'react';
 
-function Recipe({ description, imageUrl, link, steps, title, addRecipe }) {
-  const [ liked, setLiked ] = useState(false);
+function Recipe({ description, imageUrl, isLiked, link, steps, title, addRecipe }) {
+  const [ liked, setLiked ] = useState(isLiked);
 
   function like() {
     setLiked(liked => !liked);
@@ -11,7 +11,7 @@ function Recipe({ description, imageUrl, link, steps, title, addRecipe }) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({title: title, imageUrl: imageUrl})
+      body: JSON.stringify({title: title, isLiked: true, imageUrl: imageUrl})
     })
     .then(res => res.json())
     .then(data => addRecipe(data));

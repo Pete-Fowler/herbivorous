@@ -11,7 +11,8 @@ function Saved({ recipes }) {
       imageUrl={item.imageUrl} 
       link={item.link}
       steps={item.steps}
-      title={item.title} 
+      title={item.title}
+      isLiked={item.isLiked}
     />)
 
   return <div id='saved'> 

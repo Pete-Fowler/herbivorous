@@ -1,55 +1,16 @@
 {
   "recipes": [
     {
-      "id": 1,
-      "title": "Ultimate Tofu Breakfast Burrito Bowls",
-      "imageUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F9299732.jpg&w=595&h=595&c=sc&poi=face&q=60&orient=true",
-      "link": "https://www.allrecipes.com/recipe/256021/ultimate-tofu-breakfast-burrito-bowls/",
-      "description": "",
-      "steps": ""
-    },
-    {
-      "title": "Chickpea-Mushroom Veggie Burgers",
-      "imageUrl": "https://assets.epicurious.com/photos/5e4c65cfd57b3b000872c652/1:1/w_1920,c_limit/VeggieBurger_RECIPE_IG_021320_516_VOG_final.jpg",
-      "link": "https://www.epicurious.com/recipes/food/views/chickpea-mushroom-burgers",
-      "description": "All it takes are 10 ingredients and a little time to batch up homemade veggie burgers that are packed with dynamic flavor and texture. “Mushrooms add rich umami to vegan burgers, and they’re naturally low in sodium and saturated fat,” says dietitian and heart health coach Heather Shasa.",
-      "steps": "Step 1\nCook quinoa in a large saucepan of lightly salted boiling water, stirring occasionally, until tender, 8–10 minutes. Drain well and let cool at least 10 minutes.\n\nStep 2\nMeanwhile, heat ¼ cup oil in a large nonstick skillet over medium-high. Add chickpeas (make sure they are well drained) and cook, tossing occasionally, until lightly browned, 8–10 minutes. Add garlic powder and paprika and toss a few times to coat. Transfer to a large bowl and let cool about 5 minutes.",
-      "id": 2
-    },
-    {
-      "title": "Chana Masala (Savory Indian Chick Peas)",
-      "imageUrl": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F09%2F13%2F236564-chana-masala-savory-indian-chick-peas-3x4-672-copy.jpg",
-      "link": "https://www.allrecipes.com/recipe/236564/chana-masala-savory-indian-chick-peas/",
-      "steps": "\nStep 1\nGrind onion, tomato, ginger, garlic, and chile pepper together in a food processor into a paste.\n\nStep 2\nHeat olive oil in a large skillet over medium heat. Fry bay leaves in hot oil until fragrant, about 30 seconds. Pour the paste into the skillet and cook until the oil begins to separate from the mixture and is golden brown in color, 2 to 3 minutes. Season the mixture with chili powder, coriander, gram masala, turmeric, and salt; cook and stir until very hot, 2 to 3 minutes.\n\nStep 3\nStir enough water into the mixture to get a thick gravy; bring to a boil and stir chickpeas into the gravy. Reduce heat to medium and cook until the chickpeas are heated through, 5 to 7 minutes. Garnish with cilantro.\n\nAs an optional serving suggestion, use the \"Indian Naan Bread\" recipe instead of rice as a companion to this dish.",
-      "description": "Give this chana masala dish a try and don't look back. Indian food is not just curried sauces. It's not too exotic either, unless \"exotic\" is code for \"yummy and full of flavor.\"",
-      "id": 3
-    },
-    {
-      "title": "Crispy Tofu with Black Pepper Sauce",
-      "imageUrl": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Crispy-Tofu-with-Black-Pepper-Sauce_EXPS_HCK17_195066_D08_26_2b-6.jpg?w=1200",
-      "link": "https://www.tasteofhome.com/collection/vegan-recipes/",
-      "description": "Sometimes tofu can be boring and tasteless, but not in this recipe! Here, the crispy vegetarian bean curd is so loaded with flavor, you'll never shy away from tofu again.",
-      "steps": "Ingredients\n2 tablespoons reduced-sodium soy sauce\n2 tablespoons chili garlic sauce\n1 tablespoon packed brown sugar\n1 tablespoon rice vinegar\n4 green onions\n8 ounces extra-firm tofu, drained\n3 tablespoons cornstarch\n6 tablespoons canola oil, divided\n8 ounces fresh sugar snap peas (about 2 cups), trimmed and thinly sliced\n1 teaspoon freshly ground pepper\n3 garlic cloves, minced\n2 teaspoons grated fresh gingerroot\nDirections\nMix first 4 ingredients. Mince white parts of green onions; thinly slice green parts.\nCut tofu into 1/2-in. cubes; pat dry with paper towels. Toss tofu with cornstarch. In a large skillet, heat 4 tablespoons oil over medium-high heat. Add tofu; cook until crisp and golden brown, 5-7 minutes, stirring occasionally. Remove from pan; drain on paper towels.\nIn same pan, heat 1 tablespoon oil over medium-high heat. Add peas; stir-fry until crisp-tender, 2-3 minutes. Remove from pan.\nIn same pan, heat remaining 1 tablespoon oil over medium-high heat. Add pepper; cook 30 seconds. Add garlic, ginger and minced green onions; stir-fry 30-45 seconds. Stir in soy sauce mixture; cook and stir until slightly thickened. Remove from heat; stir in tofu and peas. Sprinkle with sliced green onions.",
-      "id": 4
-    },
-    {
-      "id": 663600,
-      "title": "Tomato Herbed Spelt Bread",
-      "image": "https://spoonacular.com/recipeImages/663600-312x231.jpg",
-      "imageType": "jpg",
-      "imageUrl": "https://spoonacular.com/recipeImages/663600-312x231.jpg"
-    },
-    {
-      "id": 635066,
-      "title": "Black Bean Feijoada",
-      "image": "https://spoonacular.com/recipeImages/635066-312x231.jpg",
-      "imageType": "jpg",
-      "imageUrl": "https://spoonacular.com/recipeImages/635066-312x231.jpg"
-    },
-    {
       "title": "Channa-Chickpea, Potato & Cauliflower Curry",
+      "isLiked": true,
       "imageUrl": "https://spoonacular.com/recipeImages/637426-312x231.jpg",
-      "id": 663601
+      "id": 1
+    },
+    {
+      "title": "Coconut Vegetable Curry Over Quinoa",
+      "isLiked": true,
+      "imageUrl": "https://spoonacular.com/recipeImages/1096225-312x231.jpg",
+      "id": 2
     }
   ]
 }
