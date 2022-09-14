@@ -11,6 +11,18 @@
       "isLiked": true,
       "imageUrl": "https://spoonacular.com/recipeImages/1096225-312x231.jpg",
       "id": 2
+    },
+    {
+      "title": "Spicy Vegan Chili",
+      "isLiked": true,
+      "imageUrl": "https://spoonacular.com/recipeImages/661223-312x231.jpg",
+      "id": 3
+    },
+    {
+      "title": "Miso Soup With Thin Noodles",
+      "isLiked": true,
+      "imageUrl": "https://spoonacular.com/recipeImages/652078-312x231.jpg",
+      "id": 4
     }
   ]
 }
