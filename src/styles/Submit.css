@@ -6,6 +6,7 @@
 }
 
 #submit h1 {
+  color: white;
   margin-bottom: 0px;
 }
 
@@ -23,7 +24,7 @@
 }
 
 #submit input::placeholder, #submit textarea::placeholder {
-  color: black;
+  color: var(--greenD);
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
 }
@@ -32,6 +33,7 @@
   outline: none;
   transition: .6s;
   transform: scale(1.02);
+  border: 1px solid ;
 }
 
 #submit input, #submit textarea {
