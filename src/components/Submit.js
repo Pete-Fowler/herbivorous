@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Submit.css';
 
 function Submit({ addRecipe }) {
-  const [formData, setFormData ] = useState({isLiked: true});
+  const [formData, setFormData ] = useState({isLiked: true, type: 'user-created'});
   const navigate = useNavigate();
 
   function handleChange(e) {
@@ -39,7 +39,7 @@ function Submit({ addRecipe }) {
       <input type='url' 
         name='imageUrl' 
         placeholder='Enter image url' 
-        value={formData.imageUrl} 
+        value={formData.image} 
         onChange={handleChange}>
       </input>
         <input type='url' 
@@ -48,14 +48,33 @@ function Submit({ addRecipe }) {
         value={formData.link} 
         onChange={handleChange}>
       </input>
-      <textarea name='description' 
+      <input type='servings' 
+        name='title' 
+        placeholder='Enter number of servings ...' 
+        value={formData.title} 
+        onChange={handleChange}>
+      </input>
+      <input type='text' 
+        name='readyInMinutes' 
+        placeholder='Enter minutes it is ready in ...' 
+        value={formData.title} 
+        onChange={handleChange}>
+      </input>
+      <textarea name='summary' 
         placeholder='Enter description' 
         value={formData.description} 
         onChange={handleChange} 
         rows='10' cols='40'>
       </textarea>
-      <textarea name='steps' 
-        placeholder='Enter ingredients/steps' 
+      <textarea name='ingredients' 
+        placeholder='Enter ingredients' 
+        value={formData.steps} 
+        onChange={handleChange} 
+        rows='10' 
+        cols='40'>
+      </textarea>
+      <textarea name='instructions' 
+        placeholder='Enter instructions' 
         value={formData.steps} 
         onChange={handleChange} 
         rows='10' 

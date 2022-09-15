@@ -21,3 +21,6 @@ This is a plant-based recipe app that makes figuring out what to make easy.
 <img src='https://user-images.githubusercontent.com/104571660/189733183-461f2680-4621-44b4-b139-aea880cea739.png' width='400px'> 
 <img src='https://user-images.githubusercontent.com/104571660/189734192-ff0ecaa2-453c-4659-b898-521f4ef06e6d.png' width='400px'>
 
+Notes: 
+  - e.stopPropagation() on child prevents bubbling to parent so child and parent click event handlers both do not fire and only child fires.
+  

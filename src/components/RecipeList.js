@@ -11,11 +11,12 @@ function RecipeList({ list, addRecipe, removeRecipe, showDetails }) {
       key={item.id}
       id={item.id}
       description={item.description}
-      imageUrl={item.image} 
+      image={item.image} 
       link={item.link}
       steps={item.steps}
       title={item.title}
       isLiked={item.isLiked}
+      type={item.type}
       addRecipe={addRecipe}
       removeRecipe={removeRecipe}
       showDetails={showDetails}

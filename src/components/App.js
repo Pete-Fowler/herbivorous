@@ -79,7 +79,7 @@ function App() {
         <Route path='/saved' element={<Saved recipes={savedRecipes} 
           removeRecipe={removeRecipe} />} />
         <Route path='/submit' element={<Submit addRecipe={addRecipe}/>} />
-        <Route path='/details/:id' element={<Details />} />
+        <Route path='/details/:type/:id' element={<Details />} />
       </Routes>
     </div>
   );
