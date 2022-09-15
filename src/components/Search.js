@@ -33,11 +33,18 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
           </div>
           {loaded === 'start' ? Spinner()  
             : loaded === 'done' && results !== false ? 
-            <RecipeList 
-              list={results} 
-              addRecipe={addRecipe} 
-              removeRecipe={removeRecipe} 
-            />
+            (<>
+              <RecipeList 
+                list={results} 
+                addRecipe={addRecipe} 
+                removeRecipe={removeRecipe} 
+              />
+              <div>
+                <span className='arrow'>{'<'}</span>
+                <span className='arrow'>{'>'}</span>
+              </div>
+            </>
+            )
             : null}
         </div>
    )
