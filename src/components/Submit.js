@@ -37,7 +37,7 @@ function Submit({ addRecipe }) {
         onChange={handleChange}>
       </input>
       <input type='url' 
-        name='imageUrl' 
+        name='image' 
         placeholder='Enter image url' 
         value={formData.image} 
         onChange={handleChange}>
@@ -48,34 +48,34 @@ function Submit({ addRecipe }) {
         value={formData.link} 
         onChange={handleChange}>
       </input>
-      <input type='servings' 
-        name='title' 
+      <input type='text' 
+        name='servings' 
         placeholder='Enter number of servings ...' 
-        value={formData.title} 
+        value={formData.servings} 
         onChange={handleChange}>
       </input>
       <input type='text' 
         name='readyInMinutes' 
         placeholder='Enter minutes it is ready in ...' 
-        value={formData.title} 
+        value={formData.readyInMinutes} 
         onChange={handleChange}>
       </input>
       <textarea name='summary' 
         placeholder='Enter description' 
-        value={formData.description} 
+        value={formData.summary} 
         onChange={handleChange} 
         rows='10' cols='40'>
       </textarea>
       <textarea name='ingredients' 
         placeholder='Enter ingredients' 
-        value={formData.steps} 
+        value={formData.ingredients} 
         onChange={handleChange} 
         rows='10' 
         cols='40'>
       </textarea>
       <textarea name='instructions' 
         placeholder='Enter instructions' 
-        value={formData.steps} 
+        value={formData.instructions} 
         onChange={handleChange} 
         rows='10' 
         cols='40'>
