@@ -23,4 +23,6 @@ This is a plant-based recipe app that makes figuring out what to make easy.
 
 Notes: 
   - e.stopPropagation() on child prevents bubbling to parent so child and parent click event handlers both do not fire and only child fires.
+  - Displaying spinner in home.
   
+  Image by <a href="https://www.freepik.com/free-vector/different-green-leaves-pack-flat-design_18773643.htm#query=leaf&position=15&from_view=search">Freepik</a>
