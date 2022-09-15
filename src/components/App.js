@@ -12,7 +12,7 @@ function App() {
   const key = '7c9862ec65e5475e978e284fa042e7df';
   const [ recipeIndex, setRecipeIndex ] = useState(0);  // Used to iterate another recipe of day
   const [ recipes, setRecipes ] = useState(false); // List for recipe of day
-  const [ recipe, setRecipe ] = useState({}); // Currently shown recipe of day
+  const [ recipe, setRecipe ] = useState(false); // Currently shown recipe of day
   const [ card, setCard ] = useState(''); // Card for current recipe of day
   const [ savedRecipes, setSavedRecipes ] = useState([]);
  

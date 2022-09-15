@@ -2,6 +2,7 @@ import '../styles/Details.css';
 import React, { useEffect, useState } from 'react';
 import parse from 'html-react-parser';
 import { useParams } from 'react-router-dom';
+import Spinner from './Spinner';
 
 function Details() {
   const { type, id } = useParams();
@@ -66,7 +67,7 @@ function Details() {
         <p><a href={details.link}>Link to recipe source</a></p>
       </div>
     </div>) 
-    : <h1> Loading ... </h1>
+    : Spinner()
   )
 }
 

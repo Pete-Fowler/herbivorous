@@ -1,0 +1,17 @@
+@keyframes spin {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+#spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  animation: spin 1.5s linear infinite;
+}

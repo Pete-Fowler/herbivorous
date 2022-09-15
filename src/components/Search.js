@@ -1,11 +1,13 @@
 import React, { useState }from 'react';
 import '../styles/Search.css';
 import RecipeList from './RecipeList';
+import Spinner from './Spinner';
 
 function Search({ addRecipe, removeRecipe }) {
   const key = '7c9862ec65e5475e978e284fa042e7df';
   const [ string, setString ] = useState('');
   const [ results, setResults ] = useState(false);
+  const [ loaded, setLoaded ] = useState('no');
   
   function handleChange(e) {
     setString(e.target.value);
@@ -13,9 +15,13 @@ function Search({ addRecipe, removeRecipe }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setLoaded('start');
     fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=random&number=10&diet=vegan&query=${string}`)
     .then(res => res.json())
-    .then(data => setResults(data));
+    .then(data => {
+      setResults(data);
+      setLoaded('done');
+    });
   }
 
   return (
@@ -26,12 +32,14 @@ function Search({ addRecipe, removeRecipe }) {
               <button type='submit' id='search-btn'>🔍</button>
             </form>
           </div>
-          {results === false ? null 
-            : <RecipeList 
+          {loaded === 'start' ? Spinner()  
+            : loaded === 'done' ? 
+            <RecipeList 
               list={results} 
               addRecipe={addRecipe} 
               removeRecipe={removeRecipe} 
-            />}
+            />
+            : null}
         </div>
    )
 }
