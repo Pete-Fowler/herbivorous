@@ -26,16 +26,19 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
     });
   }
 
+  // Pages forward
   function back() {
-    setOffset(offset => offset - 10);
+    setOffset(prev => prev - 10);
     setLoaded('start');
   }
 
+  // Pages back
   function forward() {
-    setOffset(offset => offset + 10);
+    setOffset(prev => prev + 10);
     setLoaded('start');
   }
 
+  // Calls fetches for pagination fwd/back
   useEffect(() => {
     if(firstRender.current === true) {
       firstRender.current = false;
