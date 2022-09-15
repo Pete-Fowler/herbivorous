@@ -1,4 +1,4 @@
-import React, { useState }from 'react';
+import React, { useState, useEffect, useRef }from 'react';
 import '../styles/Search.css';
 import RecipeList from './RecipeList';
 import Spinner from './Spinner';
@@ -8,7 +8,8 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
   const [ string, setString ] = useState('');
   const [ loaded, setLoaded ] = useState('done');
   const [ offset, setOffset ] = useState(0);
-  
+  const firstRender = useRef(true);
+
   function handleChange(e) {
     setString(e.target.value);
   }
@@ -28,18 +29,17 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
   function back() {
     setOffset(offset => offset - 10);
     setLoaded('start');
-    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&offset=${offset}&sort=popularity&number=10&diet=vegan&query=${string}`)
-    .then(res => res.json())
-    .then(data => {
-      setResults(data);
-      setLoaded('done');
-      console.log(data);
-    });
   }
 
   function forward() {
     setOffset(offset => offset + 10);
     setLoaded('start');
+  }
+
+  useEffect(() => {
+    if(firstRender.current === true) {
+      firstRender.current = false;
+    } else {
     fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&offset=${offset}&sort=popularity&number=10&diet=vegan&query=${string}`)
     .then(res => res.json())
     .then(data => {
@@ -47,7 +47,8 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
       setLoaded('done');
       console.log(data);
     });
-  }
+    }
+  }, [offset])
 
   return (
         <div id='search'>
