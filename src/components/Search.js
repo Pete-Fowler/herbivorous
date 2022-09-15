@@ -7,6 +7,7 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
   const key = '7c9862ec65e5475e978e284fa042e7df';
   const [ string, setString ] = useState('');
   const [ loaded, setLoaded ] = useState('done');
+  const [ offset, setOffset ] = useState(0);
   
   function handleChange(e) {
     setString(e.target.value);
@@ -15,11 +16,36 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
   function handleSubmit(e) {
     e.preventDefault();
     setLoaded('start');
-    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=random&number=10&diet=vegan&query=${string}`)
+    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=popularity&number=10&diet=vegan&query=${string}`)
     .then(res => res.json())
     .then(data => {
       setResults(data);
       setLoaded('done');
+      setOffset(0);
+    });
+  }
+
+  function back() {
+    setOffset(offset => offset - 10);
+    setLoaded('start');
+    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&offset=${offset}&sort=popularity&number=10&diet=vegan&query=${string}`)
+    .then(res => res.json())
+    .then(data => {
+      setResults(data);
+      setLoaded('done');
+      console.log(data);
+    });
+  }
+
+  function forward() {
+    setOffset(offset => offset + 10);
+    setLoaded('start');
+    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&offset=${offset}&sort=popularity&number=10&diet=vegan&query=${string}`)
+    .then(res => res.json())
+    .then(data => {
+      setResults(data);
+      setLoaded('done');
+      console.log(data);
     });
   }
 
@@ -40,8 +66,8 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
                 removeRecipe={removeRecipe} 
               />
               <div>
-                <span className='arrow'>{'<'}</span>
-                <span className='arrow'>{'>'}</span>
+                <span className='arrow' onClick={back}>{'<'}</span>
+                <span className='arrow' onClick={forward}>{'>'}</span>
               </div>
             </>
             )
