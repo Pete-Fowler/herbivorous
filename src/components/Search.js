@@ -3,11 +3,10 @@ import '../styles/Search.css';
 import RecipeList from './RecipeList';
 import Spinner from './Spinner';
 
-function Search({ addRecipe, removeRecipe }) {
+function Search({ addRecipe, removeRecipe, results, setResults }) {
   const key = '7c9862ec65e5475e978e284fa042e7df';
   const [ string, setString ] = useState('');
-  const [ results, setResults ] = useState(false);
-  const [ loaded, setLoaded ] = useState('no');
+  const [ loaded, setLoaded ] = useState('done');
   
   function handleChange(e) {
     setString(e.target.value);
@@ -33,7 +32,7 @@ function Search({ addRecipe, removeRecipe }) {
             </form>
           </div>
           {loaded === 'start' ? Spinner()  
-            : loaded === 'done' ? 
+            : loaded === 'done' && results !== false ? 
             <RecipeList 
               list={results} 
               addRecipe={addRecipe} 
