@@ -45,6 +45,7 @@ function Details() {
           </ul>
           <h3>Instructions</h3>
           <div id='instructions'>{parse(details.instructions)}</div>
+          <p><a href={details.spoonacularSourceUrl}>Link to recipe source on spoonacular.com</a></p>
         </div>
     </div>) 
     : loaded === 'user-created' ?  
@@ -62,6 +63,7 @@ function Details() {
         </p>
         <h3>Instructions</h3>
         <div id='instructions'>{parse(details.instructions)}</div>
+        <p><a href={details.link}>Link to recipe source</a></p>
       </div>
     </div>) 
     : <h1> Loading ... </h1>
