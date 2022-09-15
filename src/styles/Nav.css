@@ -9,6 +9,8 @@
   font-size: 2.5rem;
   background-color: #50C75D;
   position: sticky;
+  top: 0px;
+  z-index: 5;
 }
 
 #logo {
