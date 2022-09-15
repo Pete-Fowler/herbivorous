@@ -64,20 +64,20 @@ function Submit({ addRecipe }) {
         placeholder='Enter description' 
         value={formData.summary} 
         onChange={handleChange} 
-        rows='10' cols='40'>
+        rows='5' cols='40'>
       </textarea>
       <textarea name='ingredients' 
         placeholder='Enter ingredients' 
         value={formData.ingredients} 
         onChange={handleChange} 
-        rows='10' 
+        rows='5' 
         cols='40'>
       </textarea>
       <textarea name='instructions' 
         placeholder='Enter instructions' 
         value={formData.instructions} 
         onChange={handleChange} 
-        rows='10' 
+        rows='5' 
         cols='40'>
       </textarea>
       <button type='submit'>Submit</button>

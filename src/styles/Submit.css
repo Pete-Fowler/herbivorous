@@ -32,8 +32,8 @@
 #submit input:focus, #submit textarea:focus {
   outline: none;
   transition: .6s;
-  transform: scale(1.02);
-  border: 1px solid ;
+  transform: scale(1.01);
+  border: 2px solid white;
 }
 
 #submit input, #submit textarea {
@@ -65,8 +65,8 @@
 }
 
 #submit button:hover {
-  transition: .6sec;
-  opacity: .8;
+  transition: .6s;
+  opacity: .7;
 }
 
 #submit button:active {
