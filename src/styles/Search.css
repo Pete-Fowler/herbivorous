@@ -20,6 +20,6 @@
   font-size: 1.3rem;
   appearance: none;
   border: none; 
-  background-color: #92D099;
+  background-color: var(--beige);
   padding: 0px 5px;
 }

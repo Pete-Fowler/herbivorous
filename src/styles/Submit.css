@@ -18,8 +18,8 @@
   margin: 10px 25px 25px 25px;
   width: 40%;
   border-radius: 5px;
-  background-color: #50C75D;
-  box-shadow: 2px 2px 4px 2px gray;
+  background-color: var(--green);
+  box-shadow: 2px 2px 4px 2px var(--greenD);
 }
 
 #submit input, #submit textarea {
@@ -39,11 +39,11 @@
   font-size: 1.5rem;
   color: white;
   appearance: none;
-  background-color: #327f3b;
+  background-color: var(--greenD);
   border: none;
   margin-bottom: 5px;
   border-radius: 5px;
-  box-shadow: 2px 2px 2px #50C75D;
+  box-shadow: 2px 2px 2px var(--green);
 }
 
 #submit button:hover {

@@ -13,10 +13,10 @@
   max-width: 40%;
 }
 #details #text {
-  background-color: #50C75D;
+  background-color: var(--green);
   border-radius: 5px;
   padding: 10px;
-  box-shadow: 4px #3B9446;
+  box-shadow: 4px var(--greenD);
 }
 
 #details a {

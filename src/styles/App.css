@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=MuseoModerno:wght@400;700&display=swap');
 
+:root {
+  --beige: #C8B88A;
+  --green: #86B049;
+  --greenD: #476930;
+}
+
+/* body { background-color: var(--blue); } */
+
 body {
   margin: 0px;
-  background-color: #92D099;
+  background-color: var(--beige);
   color: white;
   font-family: 'Montserrat', sans-serif;
 }
