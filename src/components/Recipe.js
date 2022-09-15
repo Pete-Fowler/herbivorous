@@ -6,7 +6,8 @@ function Recipe({ id, imageUrl, isLiked = false, title, addRecipe, removeRecipe 
   const [ liked, setLiked ] = useState(isLiked);
   const navigate = useNavigate();
 
-  function like() {
+  function like(e) {
+    e.stopPropagation();
     if(liked === false) {
       fetch(`http://localhost:3000/recipes`, {
         method: 'POST',
