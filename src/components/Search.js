@@ -28,14 +28,18 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
 
   // Pages forward
   function back() {
-    setOffset(prev => prev - 10);
-    setLoaded('start');
+    if(offset >= 10) {
+      setOffset(prev => prev - 10);
+      setLoaded('start');
+    }
   }
 
   // Pages back
   function forward() {
-    setOffset(prev => prev + 10);
-    setLoaded('start');
+    if((offset / 10) + 1 <= Math.floor(results.totalResults / 10)) {
+      setOffset(prev => prev + 10);
+      setLoaded('start'); 
+    }
   }
 
   // Calls fetches for pagination fwd/back
@@ -69,10 +73,11 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
                 addRecipe={addRecipe} 
                 removeRecipe={removeRecipe} 
               />
-              <div>
+              <div id='arrows-box'>
                 <span className='arrow' onClick={back}>{'<'}</span>
                 <span className='arrow' onClick={forward}>{'>'}</span>
               </div>
+              {`Page ${(offset / 10) + 1} of ${Math.floor((results.totalResults / 10) + 1)}`}
             </>
             )
             : null}
