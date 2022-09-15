@@ -57,12 +57,12 @@ function Details() {
           <span id='servings'>Serves: {details.servings}  |  </span>
           <span id='time'>Ready in: {details.readyInMinutes} min.</span>
         </h3>
-        <p id='summary'>{parse(details.summary)}</p>
+        <p id='summary'>{details.summary}</p>
         <h3>Ingredients</h3>
         <p id='ingredients'>{details.ingredients}
         </p>
         <h3>Instructions</h3>
-        <div id='instructions'>{parse(details.instructions)}</div>
+        <div id='instructions'>{details.instructions}</div>
         <p><a href={details.link}>Link to recipe source</a></p>
       </div>
     </div>) 
