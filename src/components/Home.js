@@ -19,14 +19,19 @@ function Home({ imageUrl, anotherRandomCard, recipe, addRecipe }) {
     .then(data => addRecipe(data));
   }
 
+  function handleShowAnother() {
+    setImageLoaded(false);
+    anotherRandomCard();
+  }
+
   return <>
   <div style={imageLoaded ? {display:'none'} : {} }>
     {Spinner()}
   </div>
-  <div id='home' style={imageLoaded ? {} : {display:'none'}}>
+  <div id='home' >
       <h1>Recipe of the Day</h1>
-      <button id='show-another' type='button' onClick={anotherRandomCard}>Show Me Another</button>
-      <div id='image-wrapper'>
+      <button id='show-another' type='button' onClick={handleShowAnother}>Show Me Another</button>
+      <div id='image-wrapper' style={imageLoaded ? {} : {display:'none'}}>
       <img src={imageUrl} alt='Recipe card' onLoad={() => setImageLoaded(true)}></img>
         <div id='likeBtn' onClick={like}>{liked ? '❤️' : '🤍'}</div>
       </div>
