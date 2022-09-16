@@ -5,6 +5,19 @@
       "title": "Country Breakfast: Tofu and Veggie Scramble With Home Fries",
       "isLiked": true,
       "image": "https://spoonacular.com/recipeImages/640194-312x231.jpg"
+    },
+    {
+      "isLiked": true,
+      "type": "user-created",
+      "title": "Jackfruit Vegan Tacos",
+      "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5053996.jpg&w=595&h=595&c=sc&poi=face&q=60&orient=true",
+      "link": "https://www.allrecipes.com/recipe/258806/jackfruit-vegan-tacos/",
+      "servings": "3",
+      "readyInMinutes": "30",
+      "summary": "Jackfruit is a great vegan alternative to shredded chicken to use in tacos. These jackfruit tacos are delicious and vegan! Choose your favorite taco toppings, such as lettuce, tomato, cilantro, avocado, vegan cheese, and vegan sour cream.",
+      "ingredients": "2 (20 ounce) cans jackfruit in brine - drained, rinsed, and cut into bite-sized pieces\n\n1 tablespoon vegetable oil\n\n1 tablespoon water, or more as needed\n\n2 tablespoons taco seasoning mix, or to taste\n\n4 taco shells\n\n½ cup salsa, or to taste",
+      "instructions": "Step 1\nHeat oil in a small saucepan over medium heat. Add jackfruit; cook and stir for 2 to 3 minutes. Add 1 tablespoon water and taco seasoning; stir until well combined, about 1 minute. Add additional water 1 tablespoon at a time as needed.\n\nStep 2\nPlace a small amount of jackfruit in each taco shell; add 2 tablespoons salsa.",
+      "id": 640195
     }
   ]
 }
