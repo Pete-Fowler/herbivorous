@@ -6,6 +6,12 @@
   padding-bottom: 20px;
 }
 
+#search-box {
+  font-size: 1.3rem;
+  width: 60%;
+  margin-top: 40px;
+}
+
 #search form {
   display: flex;
   flex-direction: column;
@@ -13,22 +19,17 @@
 }
 
 #search-bar {
-  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #search input {
   font-size: 1.3rem;
-  margin-top: 40px;
-  width: 85%;
 }
 
 #sort-by {
   margin: 5px;
-}
-
-#search-box {
-  font-size: 1.3rem;
-  width: 40%;
 }
 
 #search-btn {
