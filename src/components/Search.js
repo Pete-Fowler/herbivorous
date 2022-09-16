@@ -11,8 +11,8 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
   const firstRender = useRef(true);
 
   function handleChange(e) {
-    setData([e.target.name] = e.target.value);
-    console.log(data.sort);
+    setData({[e.target.name]: e.target.value});
+    console.log(data.string, data.sort);
   }
 
   function handleSubmit(e) {
@@ -66,7 +66,7 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
                 <input type='text' name='string' value={data.string} onChange={handleChange}></input>
                 <button type='submit' id='search-btn'>🔍</button>
               </div>
-              <label for="sort-by">Sort by: 
+              <label htmlFor="sort-by">Sort by: 
                 <select id='sort-by' value={data.sort} onChange={handleChange}>
                   <option name='popularity' value='popularity'>Popularity</option>
                   <option name='healthiness'        value='healthiness'>Healthiness</option>
