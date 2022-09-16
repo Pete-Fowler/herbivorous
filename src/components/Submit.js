@@ -30,56 +30,74 @@ function Submit({ addRecipe }) {
   return <div id='submit'>
     <h1>Add a New Recipe</h1>
     <form onSubmit={submitRecipe}>
-      <input type='text' 
-        name='title' 
-        placeholder='Enter recipe title ...' 
-        value={formData.title} 
-        onChange={handleChange}>
-      </input>
-      <input type='url' 
-        name='image' 
-        placeholder='Enter image url' 
-        value={formData.image} 
-        onChange={handleChange}>
-      </input>
-        <input type='url' 
-        name='link' 
-        placeholder='Enter link to recipe (if applicable)' 
-        value={formData.link} 
-        onChange={handleChange}>
-      </input>
-      <input type='text' 
-        name='servings' 
-        placeholder='Enter number of servings ...' 
-        value={formData.servings} 
-        onChange={handleChange}>
-      </input>
-      <input type='text' 
-        name='readyInMinutes' 
-        placeholder='Enter minutes it is ready in ...' 
-        value={formData.readyInMinutes} 
-        onChange={handleChange}>
-      </input>
-      <textarea name='summary' 
-        placeholder='Enter description' 
-        value={formData.summary} 
-        onChange={handleChange} 
-        rows='5' cols='40'>
-      </textarea>
-      <textarea name='ingredients' 
-        placeholder='Enter ingredients' 
-        value={formData.ingredients} 
-        onChange={handleChange} 
-        rows='5' 
-        cols='40'>
-      </textarea>
-      <textarea name='instructions' 
-        placeholder='Enter instructions' 
-        value={formData.instructions} 
-        onChange={handleChange} 
-        rows='5' 
-        cols='40'>
-      </textarea>
+      <label> Title
+        <input type='text'
+          name='title' 
+          required
+          minLength={5}
+          maxLength={50}
+          value={formData.title}
+          onChange={handleChange}>
+        </input>
+      </label>
+      <label>Image Url
+        <input type='url'
+          name='image'
+          value={formData.image}
+          onChange={handleChange}>
+        </input>
+      </label>
+        <label>Link to Recipe
+          <input type='url'
+            name='link' 
+            value={formData.link}
+            onChange={handleChange}>
+          </input>
+        </label>
+      <label>Number of Servings
+        <input type='text'
+          name='servings' 
+          value={formData.servings}
+          onChange={handleChange}>
+        </input>
+      </label>
+      <label>Minutes to Prepare
+        <input type='text'
+          name='readyInMinutes' 
+          value={formData.readyInMinutes}
+          onChange={handleChange}>
+        </input>
+      </label>
+      <label>Description
+        <textarea name='summary'
+          maxLength={300}
+          value={formData.summary}
+          onChange={handleChange}
+          rows='5' cols='40'>
+        </textarea>
+      </label>
+      <label>Ingredients
+        <textarea name='ingredients'
+          required
+          minLength={35}
+          maxLength={800}
+          value={formData.ingredients}
+          onChange={handleChange}
+          rows='5'
+          cols='40'>
+        </textarea>
+      </label>
+      <label>Instructions
+        <textarea name='instructions'
+          required
+          minLength={50}
+          maxLength={800}
+          value={formData.instructions}
+          onChange={handleChange}
+          rows='5'
+          cols='40'>
+        </textarea>
+      </label>
       <button type='submit'>Submit</button>
     </form>
   </div>

@@ -17,7 +17,8 @@
   gap: 10px;
   padding: 25px;
   margin: 10px 25px 25px 25px;
-  width: 40%;
+  min-width: 320px;
+  width: 60%;
   border-radius: 5px;
   background-color: var(--green);
   box-shadow: 0 0 5px 2px var(--greenD);
@@ -36,14 +37,27 @@
   border: 2px solid var(--greenD);
 }
 
+#submit input:valid, #submit textarea:valid {
+  border: 2px solid var(--beige);
+}
+
+#submit input:invalid, #submit textarea:invalid {
+  border: 2px solid red;
+}
+
+#submit input:empty, #submit textarea:empty {
+  border: none;
+}
+
 #submit input, #submit textarea {
   color: black;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   appearance: none;
   display: block;
-  width: 90%;
-  margin: 10px;
+  width: 100%;
+  padding: 0;
+  margin: 10px 0px;
   border: none;
   background-color: white;
   box-shadow: 0px 0px 4px 1px var(--greenD);
@@ -51,6 +65,10 @@
 
 #submit textarea {
   resize: none;
+}
+
+#submit label {
+  width: 80%;
 }
 
 #submit button {
