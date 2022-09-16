@@ -5,19 +5,19 @@ import Spinner from './Spinner';
 
 function Search({ addRecipe, removeRecipe, results, setResults }) {
   const key = '7c9862ec65e5475e978e284fa042e7df';
-  const [ string, setString ] = useState('');
+  const [ data, setData ] = useState({string: '', sort: 'popularity'});
   const [ loaded, setLoaded ] = useState('done');
   const [ offset, setOffset ] = useState(0);
   const firstRender = useRef(true);
 
   function handleChange(e) {
-    setString(e.target.value);
+    setData({...data, [e.target.name]: e.target.value});
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     setLoaded('start');
-    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=popularity&number=10&diet=vegan&query=${string}`)
+    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&sort=${data.sort}&number=10&diet=vegan&query=${data.string}`)
     .then(res => res.json())
     .then(data => {
       setResults(data);
@@ -47,12 +47,11 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
     if(firstRender.current === true) {
       firstRender.current = false;
     } else {
-    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&offset=${offset}&sort=popularity&number=10&diet=vegan&query=${string}`)
+    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&offset=${offset}&sort=${data.sort}&number=10&diet=vegan&query=${data}`)
     .then(res => res.json())
     .then(data => {
       setResults(data);
       setLoaded('done');
-      console.log(data);
     });
     }
   }, [offset])
@@ -61,8 +60,18 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
         <div id='search'>
           <div id='search-box'>
             <form onSubmit={handleSubmit}>
-              <input type='text' value={string} onChange={handleChange}></input>
-              <button type='submit' id='search-btn'>🔍</button>
+              <div id='search-bar'>
+                <input type='text' name='string' value={data.string} onChange={handleChange}></input>
+                <button type='submit' id='search-btn'>🔍</button>
+              </div>
+              <label htmlFor="sort-by">Sort by: 
+                <select id='sort-by' name='sort' value={data.sort} onChange={handleChange}>
+                  <option value='popularity'>Popularity</option>
+                  <option value='healthiness'>Healthiness</option>
+                  <option value='time'>Prep time</option>
+                  <option value='random'>Random</option>
+                </select>
+              </label>
             </form>
           </div>
           {loaded === 'start' ? Spinner()  
