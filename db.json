@@ -5,37 +5,6 @@
       "title": "Country Breakfast: Tofu and Veggie Scramble With Home Fries",
       "isLiked": true,
       "image": "https://spoonacular.com/recipeImages/640194-312x231.jpg"
-    },
-    {
-      "id": 663500,
-      "title": "Tofu Chickpeas Lettuce Wraps",
-      "isLiked": true,
-      "image": "https://spoonacular.com/recipeImages/663500-312x231.jpg"
-    },
-    {
-      "id": 661223,
-      "title": "Spicy Vegan Chili",
-      "isLiked": true,
-      "image": "https://spoonacular.com/recipeImages/661223-312x231.jpg"
-    },
-    {
-      "isLiked": true,
-      "type": "user-created",
-      "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F-0001%2F11%2F30%2F9444501.jpg&q=60",
-      "link": "https://www.allrecipes.com/recipe/8344613/jackfruit-tacos-with-mango-slaw/",
-      "title": "Jackfruit Tacos",
-      "servings": "3",
-      "readyInMinutes": "30",
-      "summary": "These tacos made with jackfruit are perfect twist on tradition. Seasoned with taco seasoning and topped with a jalapeño-mango slaw for the finishing touch.",
-      "ingredients": "Slaw:\n\n½ cup finely shredded green cabbage\n\n¼ cup finely shredded red cabbage\n\n¼ cup chopped fresh mango\n\n1 medium carrot, shredded\n\n1 medium jalapeño pepper, seeded and thinly sliced\n\n1 ½ tablespoons mayonnaise\n\n½ medium lime, juiced\nTacos:\n\n1 (14 ounce) can green jackfruit in brine, drained\n\n1 tablespoon grapeseed oil\n\n¼ teaspoon taco seasoning, or to taste\n\n3 (6 inch) corn tortillas, or more to taste\n\n1 tablespoon chopped fresh cilantro, or to taste (Optional)",
-      "instructions": "Step 1\nCombine green and red cabbage, mango, carrot, jalapeño, mayonnaise, and lime juice for slaw in a large mixing bowl. Mix well until all ingredients are coated with mayonnaise; set aside.\n\nStep 2\nPrepare tacos: Gently pull jackfruit flesh apart as you would for pulled pork or chicken, discarding any seeds or pods.\n\nStep 3\nHeat oil in a cast iron skillet over medium heat. Add shredded jackfruit and taco seasoning; cook and stir until heated through and blended with seasoning, 2 to 3 minutes.\n\nStep 4\nMeanwhile, heat another cast iron skillet over medium-high heat. Working in batches, add tortillas and heat for 15 to 30 seconds per side.\n\nStep 5\nPut jackfruit mixture in the middle of each tortilla and top with slaw and cilantro.",
-      "id": 663501
-    },
-    {
-      "id": 663150,
-      "title": "Thai Savory Brown Fried Rice",
-      "isLiked": true,
-      "image": "https://spoonacular.com/recipeImages/663150-312x231.jpg"
     }
   ]
 }
