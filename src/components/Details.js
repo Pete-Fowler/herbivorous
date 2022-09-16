@@ -40,11 +40,11 @@ function Details() {
             <span id='time'>Ready in: {details.readyInMinutes} min.</span>
           </h3>
           <p id='summary'>{parse(details.summary)}</p>
-          <h3>Ingredients</h3>
+          <h2>Ingredients</h2>
           <ul id='ingredients'>{details.extendedIngredients.map(obj => 
             <li key={obj.name}>{obj.original}</li>)}
           </ul>
-          <h3>Instructions</h3>
+          <h2>Instructions</h2>
           <div id='instructions'>{parse(details.instructions)}</div>
           <p><a href={details.spoonacularSourceUrl}>Link to recipe source on spoonacular.com</a></p>
         </div>
