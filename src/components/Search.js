@@ -11,8 +11,7 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
   const firstRender = useRef(true);
 
   function handleChange(e) {
-    setData({[e.target.name]: e.target.value});
-    console.log(data.string, data.sort);
+    setData({...data, [e.target.name]: e.target.value});
   }
 
   function handleSubmit(e) {
@@ -53,7 +52,6 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
     .then(data => {
       setResults(data);
       setLoaded('done');
-      console.log(data);
     });
     }
   }, [offset])
@@ -67,11 +65,11 @@ function Search({ addRecipe, removeRecipe, results, setResults }) {
                 <button type='submit' id='search-btn'>🔍</button>
               </div>
               <label htmlFor="sort-by">Sort by: 
-                <select id='sort-by' value={data.sort} onChange={handleChange}>
-                  <option name='popularity' value='popularity'>Popularity</option>
-                  <option name='healthiness'        value='healthiness'>Healthiness</option>
-                  <option name='time' value='time'>Prep time</option>
-                  <option name='random' value='random'>Random</option>
+                <select id='sort-by' name='sort' value={data.sort} onChange={handleChange}>
+                  <option value='popularity'>Popularity</option>
+                  <option value='healthiness'>Healthiness</option>
+                  <option value='time'>Prep time</option>
+                  <option value='random'>Random</option>
                 </select>
               </label>
             </form>
