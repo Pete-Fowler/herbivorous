@@ -1,25 +1,16 @@
 # Herbivorous
 
-## Description
-This is a plant-based recipe app that makes figuring out what to make easy.
+<a href='https://herbivorous.petefowler.dev/'>Live page</a>
 
-## Deliverables
-- The user will be able to see a randomly suggested recipe on page load
-- The user will be able to enter keywords to search for recipes
-- In the search, the user will be able to specify
-  - types of ingredients
-  - types of cuisine
-  - type of recipe (main course, side dish, etc.)
-  
-- The user will be able to save their favorite recipe
-- The user will be able to fill out a form and submit a recipe, which will be added to their saved recipes
-- The user will be able to delete a saved recipe
-- The user will be able to 'give up' and search for nearby restaurants
+This is a recipe app replicating some core functionality of recipe sites, such as the ability to get a random recipe of the day, search recipes by keyword and multiple categories, save liked recipes, and submit a new recipe. It was built in a few days with React and vanilla CSS.
 
-## Wireframes
-<img src='https://user-images.githubusercontent.com/104571660/189733161-c7cad259-aaec-47ff-b102-232a333312bf.png' width='400px'>
-<img src='https://user-images.githubusercontent.com/104571660/189733183-461f2680-4621-44b4-b139-aea880cea739.png' width='400px'> 
-<img src='https://user-images.githubusercontent.com/104571660/189734192-ff0ecaa2-453c-4659-b898-521f4ef06e6d.png' width='400px'>
+The site uses the Spoonacular recipe site API, and a simulated backend using JSON-server.
+
+Building this, I gained experience with React, and dynamic routing with react-router-dom. I also and learned a number of other things including:
+- React renders a component twice in strict mode, on by default in development mode, which leads two double the fetch calls to an API
+- I needed to use event.stopPropagation() to prevent a click event on an absolutely positioned element from bubbling to its parent div and triggering an unwanted separate click event on that div
+- The CSS rule white-space: pre-line allowed me to properly handle line breaks coming from the submit form
+- How to build a loading spinner from scratch using an image, animation, React conditional rendering, and using state to track the completion of fetch calls or an image onLoad event to register when an image was loaded
 
   
-  Image by <a href="https://www.freepik.com/free-vector/different-green-leaves-pack-flat-design_18773643.htm#query=leaf&position=15&from_view=search">Freepik</a>
+Leaf spinner image by <a href="https://www.freepik.com/free-vector/different-green-leaves-pack-flat-design_18773643.htm#query=leaf&position=15&from_view=search">Freepik</a>
