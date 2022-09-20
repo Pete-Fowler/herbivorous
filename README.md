@@ -1,6 +1,8 @@
 # Herbivorous
 
-<a href='https://herbivorous.petefowler.dev/'>Live page</a>
+<a href='https://herbivorous.petefowler.dev/'>Live page</a> 
+
+(Site may require reloading due to Heroku hosting service putting inactive environments to sleep)
 
 This is a recipe app replicating some core functionality of recipe sites, such as the ability to get a random recipe of the day, search recipes by keyword and multiple categories, save liked recipes, and submit a new recipe. It was built in a few days with React and vanilla CSS.
 
