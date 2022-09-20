@@ -12,7 +12,7 @@ function Submit({ addRecipe }) {
 
   function submitRecipe(e) {
     e.preventDefault();
-    fetch(`http://localhost:3000/recipes`, {
+    fetch(`https://herbivorous-json.herokuapp.com/recipes`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

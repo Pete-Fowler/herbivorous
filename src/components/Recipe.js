@@ -9,7 +9,7 @@ function Recipe({ id, image, isLiked = false, title, type = 'API', addRecipe, re
   function like(e) {
     e.stopPropagation();
     if(liked === false) {
-      fetch(`http://localhost:3000/recipes`, {
+      fetch(`https://herbivorous-json.herokuapp.com/recipes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -19,7 +19,7 @@ function Recipe({ id, image, isLiked = false, title, type = 'API', addRecipe, re
       .then(res => res.json())
       .then(data => addRecipe(data));
     } else if(liked === true) {
-      fetch(`http://localhost:3000/recipes/${id}`, {
+      fetch(`https://herbivorous-json.herokuapp.com/recipes/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'

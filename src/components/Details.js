@@ -20,7 +20,7 @@ function Details() {
       })
       .catch(err => console.log(err.message));
    } else if(type === 'user-created') {
-    fetch(`http://localhost:3000/recipes/${id}`)
+    fetch(`https://herbivorous-json.herokuapp.com/recipes${id}`)
     .then(res => res.json())
     .then(data => {
       setDetails(data);

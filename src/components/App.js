@@ -20,7 +20,7 @@ function App() {
  
   // Gets saved recipes from JSON-server
   useEffect(() => {
-    fetch('http://localhost:3000/recipes')
+    fetch('https://herbivorous-json.herokuapp.com/recipes')
     .then(res => res.json())
     .then(data => setSavedRecipes(data));
   }, [])

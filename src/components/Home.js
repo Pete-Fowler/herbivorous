@@ -8,7 +8,7 @@ function Home({ imageUrl, anotherRandomCard, recipe, addRecipe }) {
 
   function like() {
     setLiked(liked => !liked);
-    fetch(`http://localhost:3000/recipes`, {
+    fetch(`https://herbivorous-json.herokuapp.com/recipes`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
