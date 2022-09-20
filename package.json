@@ -1,5 +1,6 @@
 {
   "name": "herbivorous",
+  "homepage": "https://github.com/Pete-Fowler/herbivorous",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,11 +15,10 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://github.com/Pete-Fowler/herbivorous",
   "scripts": {
+    "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
