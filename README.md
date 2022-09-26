@@ -9,6 +9,7 @@ This is a recipe app replicating some core functionality of recipe sites, such a
 The site uses the Spoonacular recipe site API, and a simulated backend using JSON-server.
 
 Building this, I gained experience with React, and dynamic routing with react-router-dom. I also and learned a number of other things including:
+- How to execute routing and nested routing with react-router-dom
 - React renders a component twice in strict mode, on by default in development mode, which leads two double the fetch calls to an API
 - I needed to use event.stopPropagation() to prevent a click event on an absolutely positioned element from bubbling to its parent div and triggering an unwanted separate click event on that div
 - The CSS rule white-space: pre-line allowed me to properly handle line breaks coming from the submit form
