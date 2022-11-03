@@ -9,7 +9,8 @@ The site uses the Spoonacular recipe site API, and a simulated backend using JSO
 
 # Lessons learned
 Building this, I gained experience with React, and dynamic routing with react-router-dom. I also and learned a number of other things including:
-- React renders a component twice in strict mode, on by default in development mode, which leads to double the fetch calls to an API
+- How to execute routing and nested routing with react-router-dom
+- React renders a component twice in strict mode, on by default in development mode, which leads two double the fetch calls to an API
 - I needed to use event.stopPropagation() to prevent a click event on an absolutely positioned element from bubbling to its parent div and triggering an unwanted separate click event on that div
 - The CSS rule white-space: pre-line allowed me to properly handle line breaks coming from the submit form
 - How to build a loading spinner from scratch using an image, animation, React conditional rendering, and using state to track the completion of fetch calls or an image onLoad event to register when an image was loaded
